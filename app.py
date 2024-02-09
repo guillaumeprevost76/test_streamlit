@@ -5,9 +5,9 @@ import os
 # import streamlit_google_oauth as oauth
 
 load_dotenv()
-client_id = os.environ["GOOGLE_CLIENT_ID"]
-client_secret = os.environ["GOOGLE_CLIENT_SECRET"]
-redirect_uri = os.environ["GOOGLE_REDIRECT_URI"]
+# client_id = os.environ["GOOGLE_CLIENT_ID"]
+# client_secret = os.environ["GOOGLE_CLIENT_SECRET"]
+# redirect_uri = os.environ["GOOGLE_REDIRECT_URI"]
 
 def validate_data():
     # user_data = {"Beer Quantity": st.session_state.beer_quantity}
