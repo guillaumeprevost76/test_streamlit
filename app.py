@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from dotenv import load_dotenv
 import os
-import streamlit_google_oauth as oauth
+# import streamlit_google_oauth as oauth
 
 load_dotenv()
 client_id = os.environ["GOOGLE_CLIENT_ID"]
@@ -46,18 +46,18 @@ def login():
 
         st.form_submit_button("Submit", type="primary", on_click=get_user_name)
 
-def login_google():
-    login_info = oauth.login(
-        client_id=client_id,
-        client_secret=client_secret,
-        redirect_uri=redirect_uri,
-        app_name="Continue with Google",
-        logout_button_text="Logout",
-    )
-    if login_info is not None:
-        user_id, user_email = login_info
-        st.session_state.user_name = user_email
-        st.write(st.session_state)
+# def login_google():
+#     login_info = oauth.login(
+#         client_id=client_id,
+#         client_secret=client_secret,
+#         redirect_uri=redirect_uri,
+#         app_name="Continue with Google",
+#         logout_button_text="Logout",
+#     )
+#     if login_info is not None:
+#         user_id, user_email = login_info
+#         st.session_state.user_name = user_email
+#         st.write(st.session_state)
 
 def main():
     st.title("Application avec Streamlit")
@@ -70,8 +70,8 @@ def main():
         st.session_state.user_name = None
 
     if st.session_state.user_name is None:
-        login_google()
-        # login()
+        # login_google()
+        login()
     elif st.session_state.beer_quantity is None:
         page_saisie()
     else:
